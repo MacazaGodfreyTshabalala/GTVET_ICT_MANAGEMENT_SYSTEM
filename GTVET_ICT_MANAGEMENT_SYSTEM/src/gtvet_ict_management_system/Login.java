@@ -227,6 +227,11 @@ public class Login extends javax.swing.JFrame {
 
     private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
         // TODO add your handling code here:
+        
+         Main MainFrame =   new Main();
+        MainFrame.setVisible(true);
+       MainFrame.pack();
+        MainFrame.setLocationRelativeTo(null);
     }//GEN-LAST:event_btLoginActionPerformed
 
     private void btResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btResetActionPerformed
