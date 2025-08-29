@@ -11,6 +11,7 @@ public class GTVET_ICT_MANAGEMENT_SYSTEM {
         LoginFrame.setVisible(true);
         LoginFrame.pack();
         LoginFrame.setLocationRelativeTo(null);
+        
           
     }
   
