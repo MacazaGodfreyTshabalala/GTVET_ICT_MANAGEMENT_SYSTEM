@@ -6,8 +6,14 @@ import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionAdapter;
+import javax.swing.JFrame;
 
 
+@SuppressWarnings("serial")
 public class Menu extends javax.swing.JPanel {
 
    
@@ -24,29 +30,27 @@ public class Menu extends javax.swing.JPanel {
     private void initComponents() {
 
         panelMoving = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         panelMoving.setOpaque(false);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("ICT Management System");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ICTDASH.png"))); // NOI18N
 
         javax.swing.GroupLayout panelMovingLayout = new javax.swing.GroupLayout(panelMoving);
         panelMoving.setLayout(panelMovingLayout);
         panelMovingLayout.setHorizontalGroup(
             panelMovingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMovingLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(22, 22, 22)
+                .addComponent(jLabel2)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         panelMovingLayout.setVerticalGroup(
             panelMovingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMovingLayout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18))
+            .addGroup(panelMovingLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -59,7 +63,7 @@ public class Menu extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panelMoving, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 400, Short.MAX_VALUE))
+                .addGap(0, 409, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -74,8 +78,35 @@ public class Menu extends javax.swing.JPanel {
         g2.fillRect(getWidth()-20,0, getWidth(), getHeight());
        super.paintChildren(grphcs);
  }
+   private int x;
+   private int y;
+  
+ public void initMoving(JFrame fram)
+   {
+       panelMoving.addMouseListener(new MouseAdapter()
+               {
+                 @Override
+                 public void mousePressed(MouseEvent me){
+                      x=me.getX();
+                      y=me.getY();
+                 }
+                  
+               });
+
+       panelMoving.addMouseMotionListener(new MouseMotionAdapter(){
+           
+           @Override
+           public void mouseDragged(MouseEvent me){
+             fram.setLocation(me.getXOnScreen()-x,me.getYOnScreen()- y);
+           }
+       
+
+       });
+       
+       
+   }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel panelMoving;
     // End of variables declaration//GEN-END:variables
 }
