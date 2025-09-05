@@ -1,6 +1,9 @@
 
 package raven.model;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 public class Model_Menu {
     
       
@@ -44,6 +47,10 @@ public class Model_Menu {
       private String name;
      private  MenuType type;
   
+     
+     public Icon toIcon(){
+       return new ImageIcon(getClass().getResource("/icons"+icon+".png"));
+     }
 public static enum MenuType{
     TITLE,MENU,EMPTY
 }
