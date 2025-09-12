@@ -1,7 +1,12 @@
 
 package raven.swing;
 
+import java.awt.Color;
 import java.awt.Font;
+import java.awt.GradientPaint;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import raven.model.Model_Menu;
 
 
@@ -29,6 +34,7 @@ public class MenuItem extends javax.swing.JPanel {
     }
     public void setSelected(boolean selected) {
         this.selected = selected;
+        repaint();
     }
    
     @SuppressWarnings("unchecked")
@@ -63,7 +69,21 @@ public class MenuItem extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-
+    
+    @Override
+  protected void paintComponent(Graphics grphcs){
+      
+   if(selected)
+   {
+         Graphics2D g2=(Graphics2D)grphcs;
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
+        g2.setColor(new Color(255,255,255,80));
+        g2.fillRoundRect(0,0,getWidth(),getHeight(),5,5);
+   }
+       
+   super.paintComponent(grphcs);
+  }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel lbIcon;
     private javax.swing.JLabel lbName;

@@ -8,22 +8,35 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionAdapter;
 import javax.swing.JFrame;
+import raven.model.Model_Menu;
 
 
-@SuppressWarnings("serial")
 public class Menu extends javax.swing.JPanel {
 
    
     public Menu() {
         initComponents();
         setOpaque(false);
+        init();
         
         
     }
-
+   private void init(){
+       
+      listMenu1.addItem(new Model_Menu("1","Dashboard",Model_Menu.MenuType.MENU));
+      listMenu1.addItem(new Model_Menu("2","Computers & Laptops",Model_Menu.MenuType.MENU));
+      listMenu1.addItem(new Model_Menu("3","Hardware Register",Model_Menu.MenuType.MENU));
+      listMenu1.addItem(new Model_Menu("4","ICT Assets",Model_Menu.MenuType.MENU));
+      listMenu1.addItem(new Model_Menu("5","ICT Policy",Model_Menu.MenuType.MENU));
+      listMenu1.addItem(new Model_Menu("6","ICT Specifications",Model_Menu.MenuType.MENU));
+      listMenu1.addItem(new Model_Menu("7","Software Register",Model_Menu.MenuType.MENU));
+      listMenu1.addItem(new Model_Menu("8","User Access",Model_Menu.MenuType.MENU));
+      listMenu1.addItem(new Model_Menu("9","Logout",Model_Menu.MenuType.MENU));
+      listMenu1.addItem(new Model_Menu("","",Model_Menu.MenuType.EMPTY));
+     
+    }
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -31,10 +44,13 @@ public class Menu extends javax.swing.JPanel {
 
         panelMoving = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        listMenu1 = new raven.swing.ListMenu<>();
 
         panelMoving.setOpaque(false);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ICTDASH.png"))); // NOI18N
+
+        listMenu1.setBackground(new java.awt.Color(255, 255, 204));
 
         javax.swing.GroupLayout panelMovingLayout = new javax.swing.GroupLayout(panelMoving);
         panelMoving.setLayout(panelMovingLayout);
@@ -44,13 +60,15 @@ public class Menu extends javax.swing.JPanel {
                 .addGap(22, 22, 22)
                 .addComponent(jLabel2)
                 .addContainerGap(22, Short.MAX_VALUE))
+            .addComponent(listMenu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelMovingLayout.setVerticalGroup(
             panelMovingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMovingLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(listMenu1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -63,7 +81,7 @@ public class Menu extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panelMoving, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 409, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -107,6 +125,7 @@ public class Menu extends javax.swing.JPanel {
    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
+    private raven.swing.ListMenu<String> listMenu1;
     private javax.swing.JPanel panelMoving;
     // End of variables declaration//GEN-END:variables
 }
