@@ -3,7 +3,6 @@ package raven.swing;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -19,8 +18,9 @@ public class MenuItem extends javax.swing.JPanel {
     public MenuItem(Model_Menu data) {
         initComponents();
         setOpaque(false);
-        if(data.getType() == Model_Menu.MenuType.MENU){
-            lbIcon.setIcon(data.toIcon());
+        if(data.getType() == Model_Menu.MenuType.MENU)
+        {
+            //lbIcon.setIcon(data.toIcon());
             lbName.setText(data.getName());
             
         }else if(data.getType() ==Model_Menu.MenuType.TITLE){
@@ -54,8 +54,8 @@ public class MenuItem extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(lbIcon)
+                .addContainerGap()
+                .addComponent(lbIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lbName)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
