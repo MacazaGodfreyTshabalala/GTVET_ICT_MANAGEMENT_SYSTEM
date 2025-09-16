@@ -20,7 +20,7 @@ public class MenuItem extends javax.swing.JPanel {
         setOpaque(false);
         if(data.getType() == Model_Menu.MenuType.MENU)
         {
-            //lbIcon.setIcon(data.toIcon());
+            lbIcon.setIcon(data.toIcon());
             lbName.setText(data.getName());
             
         }else if(data.getType() ==Model_Menu.MenuType.TITLE){
