@@ -9,6 +9,8 @@ import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+//import java.net.URL;
+//import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import raven.model.Model_Menu;
 
@@ -24,6 +26,19 @@ public class Menu extends javax.swing.JPanel {
         
     }
    private void init(){
+       
+       
+     /*  URL url = getClass().getResource("/icons/1.PNG");
+       System.out.println("Url for icon1:"+url);
+       ImageIcon icon = null;
+       if(url!=null)
+       {
+         icon = new ImageIcon(url);
+       }
+       else
+       {
+        System.out.println("icon not found:");
+       }*/
        
       listMenu1.addItem(new Model_Menu("1","Dashboard",Model_Menu.MenuType.MENU));
       listMenu1.addItem(new Model_Menu("2","Computers & Laptops",Model_Menu.MenuType.MENU));
@@ -50,7 +65,7 @@ public class Menu extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ICTDASH.png"))); // NOI18N
 
-        listMenu1.setBackground(new java.awt.Color(255, 255, 204));
+        listMenu1.setBackground(new java.awt.Color(255, 255, 102));
 
         javax.swing.GroupLayout panelMovingLayout = new javax.swing.GroupLayout(panelMoving);
         panelMoving.setLayout(panelMovingLayout);

@@ -49,7 +49,8 @@ public class Model_Menu {
   
      
      public Icon toIcon(){
-       return new ImageIcon(getClass().getResource("/icons"+icon+".png"));
+        
+       return new ImageIcon( getClass().getResource("/icons/"+icon+".PNG"));
      }
 public static enum MenuType{
     TITLE,MENU,EMPTY

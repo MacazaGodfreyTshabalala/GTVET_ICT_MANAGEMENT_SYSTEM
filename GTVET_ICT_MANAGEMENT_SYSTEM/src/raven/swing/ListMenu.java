@@ -10,6 +10,8 @@ import raven.model.Model_Menu;
 
 
 public class ListMenu<E extends Object> extends JList<E>{
+
+    private static final long serialVersionUID = 1L;
     
     private final DefaultListModel model;
     private Object data;
